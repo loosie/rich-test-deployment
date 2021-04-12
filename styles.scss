@@ -1,0 +1,32 @@
+$primary-color: #333;
+
+body {
+  // padding: 0;
+  // margin: 0;
+  width: 100%;
+    
+    
+  background-color: $primary-color;
+  color : white;
+}
+
+article {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+// .question {
+//   display: none;
+// }
+
+// .result {
+//   display: none;
+// }
+
+// .share {
+//   margin: 0 auto;
+// }
