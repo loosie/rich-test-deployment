@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useCallback, useState, useEffect } from 'react';
 import questionData from './Data';
 import styled from 'styled-components';
@@ -122,14 +121,22 @@ const QuestionCard = () => {
 
     return (
         <>
-            <article className="question">
+            <article className="question" style={{
+                margin: '2rem 0.5rem',
+                minHeight: '280px',
+                padding: '1rem 2rem 2rem',
+                // background: '#5e5e5e'
+            }} >
 
-                <div className="progress mt-5">
+                <div className="progress mt-3">
                     <Progress idx={idx} className="progress-bar progress-bar-striped" role="progressbar" rate={idx} />
                 </div>
-                <h2 id="title" className="text-center mt-5">{title}</h2>
+                <div className="global-wrapper">
+                    <p id="title" className="text-center mt-5">{title}</p>
+                </div>
 
                 {/* <input id="type" type="hidden" value="EI" /> */}
+
                 <button id="A" type="button" value={type} className="btn btn-light mt-5" onClick={onNextA}>{A}</button>
                 <button id="B" type="button" value={type} className="btn btn-dark mt-5" onClick={onNextB}>{B}</button>
                 {idx === questionData.length ?

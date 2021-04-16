@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 const Navbar = () => {
 
 
     return (
-        <div>
+        <div style={{ width: '100%' }}>
             <nav className="navbar navbar-light bg-light">
                 <div className="container-fluid">
                     <Link className="navbar-brand" href="/">
