@@ -1,7 +1,7 @@
 import Navbar from '../../components/Navbar'
 import ResultCard from '../../components/Result/ResultCard';
 
-const Type = () => {
+const Result = () => {
     return (
         <>
             <Navbar />
@@ -11,4 +11,4 @@ const Type = () => {
     );
 }
 
-export default Type;
+export default Result;

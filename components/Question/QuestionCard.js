@@ -15,81 +15,51 @@ const QuestionCard = () => {
     const [type, setType] = useState(questionData[0].type);
     const [idx, setIdx] = useState(1);
 
-    const [EI, setEI] = useState(0);
-    const [SN, setSN] = useState(0);
-    const [TF, setTF] = useState(0);
-    const [JP, setJP] = useState(0);
+    const [OA, setOA] = useState(0);
+    const [OB, setOB] = useState(0);
 
-    const [clientType, setClientType] = useState("")
+    const [clientScore, setClientScore] = useState("")
     const router = useRouter();
 
 
-    useEffect((t) => {
+    useEffect(() => {
 
-        console.log("effect EI:  " + EI);
-        console.log("effect SN:  " + SN);
-        console.log("effect TF:  " + TF);
-        console.log("effect JP:  " + JP);
+        console.log("effect OA:  " + OA);
+        console.log("effect OB:  " + OB);
 
-        var result = calculateType(EI, SN, TF, JP);
-        setClientType(result);
-    }, [EI, SN, TF, JP]);
+        var result = calculateScore(OA, OB);
+        setClientScore(result);
+    }, [OA, OB]);
 
-    const dataScore = useCallback(
+    const AScore = useCallback(
         (t) => {
             // console.log(t);
-            if (t === 'EI') {
-                setEI(EI + 1)
-                // console.log("EI : " + EI);
-            } else if (t == 'SN') {
-                setSN(SN + 1)
+            if (t === 'OA') {
+                setOA(OA + 1)
+            }
+        }, [OB]
+    )
+    const BScore = useCallback(
+        (t) => {
+            if (t == 'OB') {
+                setOB(OB + 1)
                 // console.log("SN : " + SN);
-            } else if (t == 'TF') {
-                setTF(TF + 1)
-                // console.log("TF : " + TF);
             }
-            else if (t == 'JP') {
-                setJP(JP + 1)
-                // console.log("JP : " + JP);
-            }
-        }, [EI, SN, TF, JP]
+        }, [OB]
     )
 
-    const calculateType = useCallback(
-        (type1, type2, type3, type4) => {
-            var cType = "";
-            if (type1 > 1) {
-                cType += "E";
-            } else {
-                cType += "I";
-            }
+    const calculateScore = useCallback(
+        (type1, type2) => {
+            var score = (100 / 8 * (type1 + type2));
 
-            if (type2 > 1) {
-                cType += "S";
-            } else {
-                cType += "N";
-            }
-
-            if (type3 > 1) {
-                cType += "T";
-            } else {
-                cType += "F";
-            }
-
-            if (type4 > 1) {
-                cType += "J";
-            } else {
-                cType += "P";
-            }
-
-            return cType;
+            return score;
         }
     )
     const onLoading = useCallback(
         () => {
-            console.log(clientType);
+            console.log(clientScore);
             router.push({
-                pathname: `/type/${clientType}`,
+                pathname: `/result/${clientScore}`,
             });
             return;
         }
@@ -97,7 +67,7 @@ const QuestionCard = () => {
 
     const onNextA = useCallback(
         () => {
-            dataScore(type);
+            AScore(type);
             if (idx < questionData.length) {
                 setTitle(questionData[idx].title);
                 setA(questionData[idx].A);
@@ -110,6 +80,7 @@ const QuestionCard = () => {
 
     const onNextB = useCallback(
         () => {
+            BScore(type);
             if (idx < questionData.length) {
                 setTitle(questionData[idx].title);
                 setA(questionData[idx].A);
@@ -121,30 +92,28 @@ const QuestionCard = () => {
 
     return (
         <>
-            <article className="question" style={{
-                margin: '2rem 0.5rem',
-                minHeight: '280px',
-                padding: '1rem 2rem 2rem',
+            <div className="card question" style={{
+
                 // background: '#5e5e5e'
             }} >
 
-                <div className="progress mt-3">
+                <div className="progress" style={{ margin: "30px 0" }}>
                     <Progress idx={idx} className="progress-bar progress-bar-striped" role="progressbar" rate={idx} />
                 </div>
                 <div className="global-wrapper">
-                    <p id="title" className="text-center mt-5">{title}</p>
+                    <p id="title">{title}</p>
                 </div>
 
                 {/* <input id="type" type="hidden" value="EI" /> */}
 
-                <button id="A" type="button" value={type} className="btn btn-light mt-5" onClick={onNextA}>{A}</button>
-                <button id="B" type="button" value={type} className="btn btn-dark mt-5" onClick={onNextB}>{B}</button>
+                <button id="A" type="button" className="btn btn-light mt-5" onClick={onNextA}>{A}</button>
+                <button id="B" type="button" className="btn btn-dark mt-5" onClick={onNextB}>{B}</button>
                 {idx === questionData.length ?
                     <button id="result" type="button" className="btn btn-light mt-5" onClick={onLoading}>결과보기</button>
                     :
                     null
                 }
-            </article>
+            </div>
         </>
     )
 };

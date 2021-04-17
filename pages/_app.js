@@ -10,7 +10,7 @@ const App = ({ Component, pageProps }) => {
             <Head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>내 인생의 주인공 찾기 테스트</title>
+                <title>돈의 흐름 읽기 테스트</title>
             </Head>
 
             <Component {...pageProps} />
