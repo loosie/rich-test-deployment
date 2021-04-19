@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 const ResultCard = ({ type }) => {
 
     console.log(type);

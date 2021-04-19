@@ -5,11 +5,11 @@ const Navbar = () => {
 
 
     return (
-        <div style={{ width: '100%' }}>
-            <nav className="navbar-container">
+        <div>
+            <nav className="navbar-container" style={{ backgroundColor: '', width: '100%' }}>
 
                 <div className="navbar-wrapper">
-                    <a id="nav-title" href="/">
+                    <a id="nav-title" href="/" >
                         <img id="logo"
                             src={logo}
                             alt="logo" />
