@@ -29,9 +29,9 @@ const QuestionCard = () => {
 
     useEffect(() => {
 
-        console.log("effect OA:  " + OA);
-        console.log("effect OB:  " + OB);
-        console.log("effect idx:  " + idx + ", " + questionData.length);
+        // console.log("effect OA:  " + OA);
+        // console.log("effect OB:  " + OB);
+        // console.log("effect idx:  " + idx + ", " + questionData.length);
         var result = calculateScore(OA, OB);
         setClientScore(result);
 
