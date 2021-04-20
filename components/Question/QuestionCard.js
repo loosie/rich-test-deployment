@@ -10,6 +10,7 @@ export const Progress = styled.div`
 const QuestionCard = () => {
 
     const [title, setTitle] = useState(questionData[0].title);
+    const [qNum, setQNum] = useState(questionData[0].qNum);
     const [A, setA] = useState(questionData[0].A);
     const [B, setB] = useState(questionData[0].B);
     const [C, setC] = useState(questionData[0]?.C);
@@ -22,15 +23,23 @@ const QuestionCard = () => {
     const [clientScore, setClientScore] = useState("")
     const router = useRouter();
 
+    const [disabled, setDisabled] = useState(true);
+
+
 
     useEffect(() => {
 
         console.log("effect OA:  " + OA);
         console.log("effect OB:  " + OB);
-
+        console.log("effect idx:  " + idx + ", " + questionData.length);
         var result = calculateScore(OA, OB);
         setClientScore(result);
-    }, [OA, OB]);
+
+        if (idx === questionData.length + 1) {
+            setDisabled(false);
+
+        }
+    }, [OA, OB, idx]);
 
     const AScore = useCallback(
         (t) => {
@@ -38,7 +47,7 @@ const QuestionCard = () => {
             if (t === 'OA') {
                 setOA(OA + 1)
             }
-        }, [OB]
+        }, [OA]
     )
     const BScore = useCallback(
         (t) => {
@@ -58,6 +67,8 @@ const QuestionCard = () => {
     )
     const onLoading = useCallback(
         () => {
+            var resultBtn = document.getElementById('result');
+            resultBtn.disabled = false;
             console.log(clientScore);
             router.push({
                 pathname: `/result/${clientScore}`,
@@ -71,12 +82,13 @@ const QuestionCard = () => {
             AScore(type);
             if (idx < questionData.length) {
                 setTitle(questionData[idx].title);
+                setQNum(questionData[idx].qNum);
                 setA(questionData[idx].A);
                 setB(questionData[idx].B);
                 setC(questionData[idx]?.C)
                 setType(questionData[idx].type);
-                setIdx(idx + 1);
             }
+            setIdx(idx + 1);
 
         }, [idx]);
 
@@ -85,12 +97,16 @@ const QuestionCard = () => {
             BScore(type);
             if (idx < questionData.length) {
                 setTitle(questionData[idx].title);
+                setQNum(questionData[idx].qNum);
                 setA(questionData[idx].A);
                 setB(questionData[idx].B);
                 setC(questionData[idx]?.C)
                 setType(questionData[idx].type);
-                setIdx(idx + 1);
             }
+            setIdx(idx + 1);
+
+
+
         }, [idx]);
 
     return (
@@ -100,23 +116,26 @@ const QuestionCard = () => {
                 // background: '#5e5e5e'
             }} >
 
-                <div className="progress" style={{ margin: "30px 0" }}>
+                <div className="progress" style={{ margin: "1.8rem 0" }}>
                     <Progress idx={idx} className="progress-bar progress-bar-striped" role="progressbar" rate={idx} />
                 </div>
                 <div className="global-wrapper">
+                    <h1 id="qNum" >{qNum}</h1>
                     <p id="title">{title}</p>
                 </div>
-
+                <hr className="borderOne" />
                 {/* <input id="type" type="hidden" value="EI" /> */}
 
-                <button id="A" type="button" className="btn btn-light mt-5" onClick={onNextA}>{A}</button>
-                <button id="B" type="button" className="btn btn-light mt-5" onClick={onNextB}>{B}</button>
+                <button id="A" type="button" onClick={onNextA}>{A}</button>
+                <button id="B" type="button" onClick={onNextB}>{B}</button>
                 {C ?
-                    <button id="C" type="button" className="btn btn-light mt-5" onClick={onNextB}>{C}</button>
+                    <button id="C" type="button" onClick={onNextB}>{C}</button>
                     : null
                 }
-                {idx === questionData.length ?
-                    <button id="result" type="button" className="btn btn-light mt-5" onClick={onLoading}>결과보기</button>
+                {idx >= questionData.length ?
+
+                    <button id="result" type="button" onClick={onLoading} disabled={disabled}>결과보기</button>
+
                     :
                     null
                 }

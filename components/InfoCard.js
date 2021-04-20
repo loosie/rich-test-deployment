@@ -29,23 +29,26 @@ const InfoCard = () => {
                                 <p className="alvin" style={{ textAlign: 'right' }}>- Alvin Toffler</p>
                             </div>
                         </div>
-                        <button type="button" className="btn btn-light mt-5" onClick={onStart}>테스트 시작하기</button>
+                        <button type="button" style={{ marginTop: "3rem" }} onClick={onStart}>테스트 시작하기</button>
                     </div>
 
                     :
                     <QuestionCard />
                 }
 
+
+
+                <div className="share" >
+                    <h2> 공유하기 </h2>
+                    {/* <!-- Go to www.addthis.com/dashboard to customize your tools --> */}
+                    <div className="addthis_inline_share_toolbox"></div>
+
+                    <hr className="borderTwo" />
+                </div>
+
+
+                <Footer style={{ marginTop: '3vh', textAlign: 'center', fontSize: '0.75rem', color: 'black' }} > 부를 쫓아라 - 돈의 흐름 읽기 테스트 ©2021 Created by loosie</Footer>
             </Content>
-            <div className="share" >
-                <h2> 공유하기 </h2>
-                {/* <!-- Go to www.addthis.com/dashboard to customize your tools --> */}
-                <div className="addthis_inline_share_toolbox"></div>
-
-            </div>
-
-
-            <Footer style={{ marginTop: '7vh', textAlign: 'center', fontSize: '1rem', color: 'black' }} > 부를 쫓아라 - 돈의 흐름 읽기 테스트 ©2021 Created by loosie</Footer>
         </Layout >
     )
 };
