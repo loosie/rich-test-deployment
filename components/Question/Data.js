@@ -97,5 +97,5 @@ var questionData = [
 
 ]
 
-export default questionData
+export default questionData;
 

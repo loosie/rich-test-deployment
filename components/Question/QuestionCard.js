@@ -111,10 +111,7 @@ const QuestionCard = () => {
 
     return (
         <>
-            <div className="card question" style={{
-
-                // background: '#5e5e5e'
-            }} >
+            <div className="card question">
 
                 <div className="progress" style={{ margin: "1.8rem 0" }}>
                     <Progress idx={idx} className="progress-bar progress-bar-striped" role="progressbar" rate={idx} />
