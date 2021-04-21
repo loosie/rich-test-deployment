@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import QuestionCard from './Question/QuestionCard';
+import { Button } from 'antd';
 
 const InfoCard = () => {
 
@@ -24,7 +25,8 @@ const InfoCard = () => {
                             <p className="alvin" style={{ textAlign: 'right' }}>- Alvin Toffler</p>
                         </div>
                     </div>
-                    <button type="button" style={{ marginTop: "3rem" }} onClick={onStart}>테스트 시작하기</button>
+                    <hr className="borderOne" />
+                    <Button onClick={onStart}>테스트 시작하기</Button>
                 </div>
 
                 :

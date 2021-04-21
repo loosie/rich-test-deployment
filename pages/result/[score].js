@@ -14,13 +14,17 @@ const Result = () => {
             <Layout className="layout">
                 <Content className="content">
 
-                    <h1 style={{ marginTop: '3rem', color: 'black', textAlign: 'center' }}>{score}점!!</h1>
+                    <div className="resultCard">
 
-                    <p style={{
-                        marginTop: '3rem', color: 'black'
-                    }}>
-                        짝짝짝! 고수시네요! 확실하게 돈의 흐름을 읽고 계시는군요 </p>
-                    <hr className="borderTwo" />
+                        <h1 style={{ marginTop: '3rem', color: 'white', textAlign: 'center' }}>{score}점!!</h1>
+
+                        <p style={{
+                            marginTop: '3rem', color: 'white'
+                        }}>
+                            짝짝짝! 고수시네요! 확실하게 돈의 흐름을 읽고 계시는군요 </p>
+
+                    </div>
+
 
                     <div className="share" >
                         <h2> 공유하기 </h2>

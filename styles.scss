@@ -1,5 +1,5 @@
 $primary-color: rgb(201, 201, 208);
-$card-color: rgb(94, 94, 106);
+$card-color: rgb(50, 50, 47);
 $--spacing-px: "1px";
 $--spacing-0: 0;
 $--spacing-1: 0.25rem;
@@ -86,16 +86,31 @@ button {
   border-radius: 8px;
   font-family: 'ChosunCentennial';
   font-size: $--fontSize-1 !important;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
+  background-color: rgb(146, 133, 112);
+  color: white;
 
   &:hover {
-    transform: scale(1.01);
-    background-color: rgb(169, 174, 207);
+    background-color: rgb(166, 153, 132);
     transition: all 0.2s ease-in-out;
   }
 
 }
+
+.questionBtn {
+  background-color: #fff;
+  color: rgb(50, 50, 47);
+  
+
+  &:hover {
+    border : solid;
+    color : rgb(146, 133, 112);
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
 
 .alvin {
   font-size: $--fontSize-0 !important;
@@ -130,6 +145,17 @@ button {
 
   
 }
+
+.resultCard {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  background-color: $card-color;
+  border : 3mm ridge rgba(102, 108, 120, 0.6);
+}
+
+
 
 .share {
   width: 100%;
@@ -215,9 +241,10 @@ button {
 
 #result {
 
-  background-color: lightblue;
+//   background-color: lightblue;
 
   &:disabled {
-    background-color: #fff;
+    color:rgb(123, 120, 120);
+    background-color: rgb(157, 156, 153);
   }
 }

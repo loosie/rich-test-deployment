@@ -1,11 +1,11 @@
 import { useCallback, useState, useEffect } from 'react';
 import questionData from './Data';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
+import { Button, Progress } from 'antd';
 
-export const Progress = styled.div`
-        width: calc(100/9*${props => props.idx}%);
-    `;
+// export const Progress = styled.div`
+//         width: calc(100/9*${props => props.idx}%);
+//     `;
 
 const QuestionCard = () => {
 
@@ -113,25 +113,31 @@ const QuestionCard = () => {
         <>
             <div className="card question">
 
-                <div className="progress" style={{ margin: "1.8rem 0" }}>
-                    <Progress idx={idx} className="progress-bar progress-bar-striped" role="progressbar" rate={idx} />
+                <div style={{ margin: "1.8rem 0" }}>
+                    <Progress
+                        strokeColor={{
+                            '0%': '#fff',
+                            '100%': 'rgb(146, 133, 112)',
+                        }}
+                        percent={Math.ceil(100 / 10 * idx)}
+                        showInfo={false}
+                    />
                 </div>
                 <div className="global-wrapper">
                     <h1 id="qNum" >{qNum}</h1>
                     <p id="title">{title}</p>
                 </div>
                 <hr className="borderOne" />
-                {/* <input id="type" type="hidden" value="EI" /> */}
 
-                <button id="A" type="button" onClick={onNextA}>{A}</button>
-                <button id="B" type="button" onClick={onNextB}>{B}</button>
+                <Button className="questionBtn" id="A" type="button" onClick={onNextA}>{A}</Button>
+                <Button className="questionBtn" id="B" type="button" onClick={onNextB}>{B}</Button>
                 {C ?
-                    <button id="C" type="button" onClick={onNextB}>{C}</button>
+                    <Button className="questionBtn" id="C" type="button" onClick={onNextB}>{C}</Button>
                     : null
                 }
                 {idx >= questionData.length ?
 
-                    <button id="result" type="button" onClick={onLoading} disabled={disabled}>결과보기</button>
+                    <Button id="result" type="button" onClick={onLoading} disabled={disabled}>결과보기</Button>
 
                     :
                     null
