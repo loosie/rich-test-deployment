@@ -11,6 +11,9 @@ const App = ({ Component, pageProps }) => {
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>돈의 흐름 읽기 테스트</title>
+
+                {/* 네이버 웹마스터 소유권 등록 */}
+                <meta name="naver-site-verification" content="efb2eb5674ca0ccbb558d92506965fa9f0e824af" />
             </Head>
 
             <Component {...pageProps} />
