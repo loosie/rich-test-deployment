@@ -1,6 +1,8 @@
 // next.config.js 
 const path = require('path')
 const withImages = require('next-images');
+const Dotenv = require("dotenv-webpack");
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
 });
@@ -10,6 +12,7 @@ const nextConfig = withBundleAnalyzer({
     webpack(config, { webpack }) {
         const prod = process.env.NODE_ENV === 'production';
         const plugins = [...config.plugins];
+        config.plugins.push(new Dotenv({ silent: true }));
 
         return {
             ...config,
