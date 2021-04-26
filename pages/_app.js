@@ -31,6 +31,8 @@ const App = ({ Component, pageProps }) => {
 
                 {/* 네이버 웹마스터 소유권 등록 */}
                 <meta name="naver-site-verification" content="efb2eb5674ca0ccbb558d92506965fa9f0e824af" />
+
+
             </Head>
 
             <Component {...pageProps} />
