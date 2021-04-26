@@ -21,7 +21,7 @@ sketch
 
 .next
 .env
-.env.local
+.env.production.local
 .env.build
 react-nodebird.pem
 # End of https://www.toptal.com/developers/gitignore/api/react
