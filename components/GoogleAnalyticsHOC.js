@@ -11,7 +11,7 @@ const GoogleAnalyticsHOC = ({ children }) => {
         window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', process.env.GA_ID, {
+      gtag('config', 'G-KFDRX68Q43', {
         page_location: window.location.href,
         page_path: window.location.pathname,
         page_title: window.document.title,
@@ -23,7 +23,7 @@ const GoogleAnalyticsHOC = ({ children }) => {
       <Head>
         <script
           async
-          src='https://www.googletagmanager.com/gtag/js?id=${process.env.GA_ID}'
+          src='https://www.googletagmanager.com/gtag/js?id=G-KFDRX68Q43'
         />
       </Head>
       {children}
