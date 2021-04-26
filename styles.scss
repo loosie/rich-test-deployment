@@ -50,6 +50,9 @@ $--fontSize-7: 2.986rem;
   src: url(assets/fonts/ChosunCentennial_ttf.ttf) format('ttf'),
 }
 
+* {
+  font : Nanum Pen Script, BMEULJIRO, ChosunCentennial;
+}
 body {
   padding: 0;
   margin: 0;
@@ -68,7 +71,7 @@ h2 {
   font-family: 'BMEULJIRO';
   font-size: $--fontSize-3 !important;
   font-weight: 400;
-  margin-block-end: $--spacing-8;
+  margin-block-end: $--spacing-4;
   color : black;
 }
 

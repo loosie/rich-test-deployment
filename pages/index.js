@@ -15,7 +15,7 @@ const Home = () => {
                     <InfoCard />
 
                     <div className="kakao_ad">
-                        <ins className="kakao_ad_area" style={{ display: "none", marginTop: "1rem" }}
+                        <ins className="kakao_ad_area" style={{ display: "none", marginTop: "2rem" }}
                             data-ad-unit="DAN-BZweevRt848IuUDq"
                             data-ad-width="320"
                             data-ad-height="100"></ins>
