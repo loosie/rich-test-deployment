@@ -14,12 +14,13 @@ const Home = () => {
                 <Content className="content">
                     <InfoCard />
 
-                    <ins class="kakao_ad_area" style={{ display: "none", marginTop: "1rem" }}
-                        data-ad-unit="DAN-BZweevRt848IuUDq"
-                        data-ad-width="320"
-                        data-ad-height="100"></ins>
-                    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-
+                    <div className="kakao_ad">
+                        <ins className="kakao_ad_area" style={{ display: "none", marginTop: "1rem" }}
+                            data-ad-unit="DAN-BZweevRt848IuUDq"
+                            data-ad-width="320"
+                            data-ad-height="100"></ins>
+                        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+                    </div>
 
                     <div className="share" >
                         <h2> 공유하기 </h2>
