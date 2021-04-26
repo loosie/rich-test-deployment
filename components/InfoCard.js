@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react';
 import QuestionCard from './Question/QuestionCard';
 import { Button } from 'antd';
-import GoogleAnalyticsHOC from './GoogleAnalyticsHOC';
 
 const InfoCard = () => {
 
