@@ -36,17 +36,17 @@ $--fontSize-6: 2.488rem;
 $--fontSize-7: 2.986rem;
 
 @font-face {
-  font-family: Nanum Pen Script;
+  font-family: Nanum Pen Script, sans-serif;
   src: url(assets/fonts/NanumPenScript-Regular.ttf) format('ttf'),
 }
 
 @font-face {
-  font-family: BMEULJIRO;
+  font-family: BMEULJIRO, sans-serif;
   src: url(assets/fonts/BMEULJIROTTF.ttf) format('ttf'),
 }
 
 @font-face {
-  font-family: ChosunCentennial;
+  font-family: ChosunCentennial, sans-serif;
   src: url(assets/fonts/ChosunCentennial_ttf.ttf) format('ttf'),
 }
 
