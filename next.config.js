@@ -12,7 +12,7 @@ const nextConfig = withBundleAnalyzer({
     webpack(config, { webpack }) {
         const prod = process.env.NODE_ENV === 'production';
         const plugins = [...config.plugins];
-        config.plugins.push(new Dotenv({ silent: true }));
+        // config.plugins.push(new Dotenv({ silent: true }));
 
         return {
             ...config,
