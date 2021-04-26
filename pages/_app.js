@@ -2,11 +2,26 @@
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
 import Head from 'next/head';
-import initGA from '../src/lib/ga';
 import '../styles.scss';
-import Router from 'next/router';
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
+import * as gtag from '../lib/gtag'
 
 const App = ({ Component, pageProps }) => {
+
+    // google analytics
+    //https://github.com/vercel/next.js/blob/canary/examples/with-google-analytics/pages/_app.js
+    const router = useRouter()
+    useEffect(() => {
+        const handleRouteChange = (url) => {
+            gtag.pageview(url)
+        }
+        router.events.on('routeChangeComplete', handleRouteChange)
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange)
+        }
+    }, [router.events])
+
     return (
         <>
             <Head>

@@ -1,5 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+import { GA_TRACKING_ID } from '../lib/gtag'
+
 export default class MyDocument extends Document {
     render() {
         return (
@@ -13,6 +15,24 @@ export default class MyDocument extends Document {
                     <meta property="og:image" content="/bdot_logo2.png" />
                     <meta property="og:description" content="21세기 문맹은 문자를 못 읽고 못 쓰는 사람이 아니라, 배우려 하지 않고 낡은 지식을 버리지 않고 재학습하지 않은 사람이다.- Alvin Toffler" />
 
+
+                    {/* Global Site Tag (gtag.js) - Google Analytics */}
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                    />
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', '${GA_TRACKING_ID}', {
+                                page_path: window.location.pathname,
+                                });
+                                `,
+                        }}
+                    />
                 </Head>
                 <body>
 
