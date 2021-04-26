@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import QuestionCard from './Question/QuestionCard';
 import { Button } from 'antd';
+import GoogleAnalyticsHOC from './GoogleAnalyticsHOC';
 
 const InfoCard = () => {
 
@@ -42,4 +43,4 @@ const InfoCard = () => {
 InfoCard.propTypes = {
 };
 
-export default InfoCard;
+export default GoogleAnalyticsHOC(InfoCard);

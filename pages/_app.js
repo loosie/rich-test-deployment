@@ -2,7 +2,9 @@
 import PropTypes from 'prop-types';
 import 'bootstrap/dist/css/bootstrap.css';
 import Head from 'next/head';
+import initGA from '../src/lib/ga';
 import '../styles.scss';
+import Router from 'next/router';
 
 const App = ({ Component, pageProps }) => {
     return (
@@ -20,6 +22,10 @@ const App = ({ Component, pageProps }) => {
         </>
     )
 };
+
+// App.getInitialProps = async ctx => {
+//     initGA(process.env.GA_ID, Router);
+// }
 
 App.propTypes = {
     Component: PropTypes.elementType.isRequired,
