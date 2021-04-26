@@ -43,4 +43,4 @@ const InfoCard = () => {
 InfoCard.propTypes = {
 };
 
-export default GoogleAnalyticsHOC(InfoCard);
+export default InfoCard;
