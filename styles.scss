@@ -61,13 +61,13 @@ body {
 h1 {
   font-family: 'NanumSquare';
   font-size: $--fontSize-5 !important;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 h2 {
   font-family: 'NanumSquare';
   font-size: $--fontSize-3 !important;
-  font-weight: 400;
+  font-weight: 600;
   margin-block-end: $--spacing-4;
   color : black;
 }
@@ -86,7 +86,7 @@ button {
   border-radius: 8px;
   font-family: 'Noto Sans KR';
   font-size: $--fontSize-1 !important;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
   background-color: rgb(146, 133, 112);
   color: white;
@@ -226,7 +226,7 @@ button {
     color : white;
     margin: $--spacing-1 $--spacing-2;
     font-family: NanumSquare; 
-    font-weight: 400; 
+    font-weight: 600; 
     font-size: $--fontSize-0;
     cursor: pointer;
     text-decoration: none;
