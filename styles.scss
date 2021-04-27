@@ -59,13 +59,13 @@ body {
 }
 
 h1 {
-  font-family: 'BMEULJIRO';
+  font-family: 'NanumSquare';
   font-size: $--fontSize-5 !important;
   font-weight: 400;
 }
 
 h2 {
-  font-family: 'BMEULJIRO';
+  font-family: 'NanumSquare';
   font-size: $--fontSize-3 !important;
   font-weight: 400;
   margin-block-end: $--spacing-4;
@@ -73,7 +73,7 @@ h2 {
 }
 
 p {
-  font-family: 'ChosunCentennial';
+  font-family: 'Noto Sans KR';
   font-size: $--fontSize-1 !important;
   font-weight: 400;
   text-align: center;
@@ -84,7 +84,7 @@ button {
   margin: 1.2rem 0;
   padding: 0.5rem 2rem;
   border-radius: 8px;
-  font-family: 'ChosunCentennial';
+  font-family: 'Noto Sans KR';
   font-size: $--fontSize-1 !important;
   font-weight: 600;
   text-align: center;
@@ -225,7 +225,7 @@ button {
     height: 4vh;
     color : white;
     margin: $--spacing-1 $--spacing-2;
-    font-family: BMEULJIRO; 
+    font-family: NanumSquare; 
     font-weight: 400; 
     font-size: $--fontSize-0;
     cursor: pointer;

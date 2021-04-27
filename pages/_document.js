@@ -15,6 +15,9 @@ export default class MyDocument extends Document {
                     <meta property="og:image" content="/bdot_logo2.png" />
                     <meta property="og:description" content="21세기 문맹은 문자를 못 읽고 못 쓰는 사람이 아니라, 배우려 하지 않고 낡은 지식을 버리지 않고 재학습하지 않은 사람이다.- Alvin Toffler" />
 
+                    {/* <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR|Noto+Sans+SC|Noto+Serif|Noto+Serif+KR" rel="stylesheet" /> */}
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css" />
+
 
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
